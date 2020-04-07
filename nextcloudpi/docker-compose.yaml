@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nextcloudpi:
+    image: ownyourbits/nextcloudpi-armhf
+    command: "10.0.0.200"
+    restart: on-failure:5
+    ports:
+     - "81:80"
+     - "444:443"
+     - "4444:4443"
+    volumes:
+     - /home/pi/nextcloudpidata:/data
+     - /etc/localtime:/etc/localtime:ro
+    container_name: nextcloudpi
+
