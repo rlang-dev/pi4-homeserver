@@ -1,14 +1,15 @@
 version: '3'
 services:
   nextcloudpi:
-    image: ownyourbits/nextcloudpi-armhf #:v1.25.0
-    command: "10.0.0.200"
+    image: ownyourbits/nextcloudpi-armhf:latest
+    command: "rlang.myfirewall.org"
     restart: on-failure:5
     ports:
-     - "81:80"
-     - "444:443"
-     - "4444:4443"
+     - "80:80"
+     - "443:443"
+     - "4443:4443"
     volumes:
      - /media/data/nextcloudpidata:/data
      - /etc/localtime:/etc/localtime:ro
     container_name: nextcloudpi
+
